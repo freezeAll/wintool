@@ -38,7 +38,7 @@ public:
 
 	inline void set(const T& s)
 	{
-		data = d;
+		data = s;
 		j[cname] = data;
 	}
 

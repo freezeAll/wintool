@@ -1,6 +1,6 @@
 #pragma once
 
-
+#define BOOST_ALL_DYN_LINK
 
 #pragma comment (lib,"psapi")
 
@@ -9,11 +9,12 @@
 
 #pragma comment (lib,"boost_regex-vc140-mt-gd-1_65")
 #pragma comment (lib,"boost_filesystem-vc140-mt-gd-1_65")
-
+#pragma comment (lib,"boost_system-vc140-mt-gd-1_65")
 #else
 
 #pragma comment (lib,"boost_regex-vc140-mt-1_65")
-#pragma comment (lib,"boost_filesystem-vc140-gd-1_65")
+#pragma comment (lib,"boost_filesystem-vc140-mt-1_65")
+#pragma comment (lib,"boost_system-vc140-mt-1_65")
 #endif
 
 #include <fstream>
@@ -41,7 +42,7 @@ namespace wintool
 	namespace src = boost::log::sources;
 	namespace kws = logging::keywords;
 	typedef src::severity_channel_logger<tri::severity_level> Logger;
-	bool init_log_environment(std::string _cfg)
+	inline bool init_log_environment(std::string _cfg)
 	{
 
 
